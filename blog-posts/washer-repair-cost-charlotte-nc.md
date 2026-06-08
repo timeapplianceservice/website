@@ -1,11 +1,16 @@
 ---
-title: "How Much Does Washer Repair Cost in Charlotte NC? (2025 Guide)"
+title: How Much Does Washer Repair Cost in Charlotte NC? (2025 Guide)
 date: 2025-06-08T10:00:00
-author: "Time Appliance Repair"
-category: "guides"
-description: "Wondering how much washer repair costs in Charlotte NC? We break down average prices for common repairs and help you decide repair vs replace."
-image: "/static/blog-images/washer-repair-cost.jpg"
-tags: ["washer repair", "charlotte", "cost", "pricing"]
+author: Time Appliance Repair
+category: guides
+image: /static/blog-images/service-fee-0-11-.png
+description: Wondering how much washer repair costs in Charlotte NC? We break
+  down average prices for common repairs and help you decide repair vs replace.
+tags:
+  - washer repair
+  - charlotte
+  - cost
+  - pricing
 ---
 
 One of the first questions Charlotte homeowners ask when their washer breaks down: **"Is it worth fixing, or should I just buy a new one?"**
