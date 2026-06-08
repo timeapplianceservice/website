@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" width="240" height="64">
+  <rect width="240" height="64" rx="4" fill="none"/>
+  <!-- Star motif (simplified) -->
+  <polygon points="22,22 24,28 30,28 25,32 27,38 22,34 17,38 19,32 14,28 20,28"
+           fill="#cc3300" opacity="0.9"/>
+  <!-- THERMADOR wordmark -->
+  <text x="130" y="44" font-family="Arial,Helvetica,sans-serif"
+        font-size="22" font-weight="700" fill="#1a1a1a"
+        text-anchor="middle" letter-spacing="3">THERMADOR</text>
+</svg>

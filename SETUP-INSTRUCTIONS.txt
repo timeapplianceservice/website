@@ -1,0 +1,139 @@
+╔══════════════════════════════════════════════════════════════╗
+║   TIME APPLIANCE REPAIR — FORM SETUP (5 минут)              ║
+╚══════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════
+ШАГ 1 — ФОРМА (Web3Forms) → письма на timeappliancerepair@gmail.com
+═══════════════════════════════════════════════════════════════
+
+Это ЕДИНСТВЕННОЕ что нужно сделать чтобы форма заработала.
+Занимает 2 минуты, бесплатно, без регистрации.
+
+1. Зайди на:  https://web3forms.com
+2. Введи:     timeappliancerepair@gmail.com
+3. Нажми:     "Create Access Key"
+4. Тебе придёт письмо на Gmail — проверь и подтверди адрес
+5. Скопируй Access Key (выглядит примерно так: a1b2c3d4-xxxx-xxxx-xxxx-xxxxxxxxxxxx)
+
+6. Открой файл:  js/main.js
+7. Найди строку (в самом начале файла):
+   
+   WEB3FORMS_KEY: 'YOUR_WEB3FORMS_ACCESS_KEY',
+
+8. Замени YOUR_WEB3FORMS_ACCESS_KEY на свой ключ:
+
+   WEB3FORMS_KEY: 'a1b2c3d4-xxxx-xxxx-xxxx-xxxxxxxxxxxx',
+
+ВСЁ. Форма теперь работает — клиент нажимает кнопку,
+письмо сразу летит на timeappliancerepair@gmail.com.
+
+Что придёт в письме:
+  Subject:  🔧 New Service Request — Refrigerator Repair
+  From:     Time Appliance Repair Website
+  Body:     Имя, телефон, email, адрес, аппарат, бренд,
+            описание проблемы, предпочтительное время,
+            URL страницы, дата/время
+
+Лимит бесплатного плана: 250 писем/месяц
+Платный план ($9/мес): безлимит
+
+═══════════════════════════════════════════════════════════════
+ШАГ 2 — БЭКАП В GOOGLE SHEETS (опционально, но рекомендую)
+═══════════════════════════════════════════════════════════════
+
+Каждая заявка автоматически сохраняется в таблицу Google Sheets.
+Удобно чтобы не потерять заявки и видеть статистику.
+
+1. Зайди на sheets.google.com
+2. Создай новую таблицу: "TAR Leads"
+3. Добавь заголовки в строку 1:
+   A: Timestamp  B: Name  C: Phone  D: Email  E: Address
+   F: Appliance  G: Brand  H: Problem  I: Time  J: Page URL
+   K: UTM Source  L: UTM Medium  M: UTM Campaign
+
+4. В таблице: Extensions → Apps Script
+5. Удали весь код, вставь это:
+
+```javascript
+function doPost(e) {
+  try {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var data  = JSON.parse(e.postData.contents);
+    sheet.appendRow([
+      new Date(),
+      data.name || '',
+      data.phone || '',
+      data.email || '',
+      data.address || '',
+      data.appliance_type || '',
+      data.brand || '',
+      data.problem || '',
+      data.appointment_time || '',
+      data.page_url || '',
+      data.utm_source || '',
+      data.utm_medium || '',
+      data.utm_campaign || ''
+    ]);
+    return ContentService
+      .createTextOutput(JSON.stringify({status:'ok'}))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch(err) {
+    return ContentService
+      .createTextOutput(JSON.stringify({status:'error',msg:err.message}))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+function doGet(e) {
+  return ContentService.createTextOutput('OK');
+}
+```
+
+6. Deploy → New Deployment → Web App
+   Execute as: Me
+   Who has access: Anyone
+   → Deploy → Authorize → Copy Web App URL
+
+7. Открой js/main.js, найди:
+   SHEETS_WEBHOOK: 'YOUR_GOOGLE_APPS_SCRIPT_URL',
+   Замени URL своим.
+
+═══════════════════════════════════════════════════════════════
+ШАГ 3 — ХОСТИНГ (рекомендую Netlify — бесплатно, 2 минуты)
+═══════════════════════════════════════════════════════════════
+
+1. Зайди на: https://app.netlify.com/drop
+2. Перетащи папку сайта прямо в браузер
+3. Готово — сайт онлайн с автоматическим HTTPS
+
+Файл _redirects в корне папки автоматически настроит
+все 301 редиректы со старых URL на новые чистые URL.
+
+Для подключения своего домена:
+  Netlify Dashboard → Domain Settings → Add custom domain
+  Добавь A-запись: 75.2.60.5
+  Добавь CNAME: www → твой-сайт.netlify.app
+
+═══════════════════════════════════════════════════════════════
+ШАГ 4 — GOOGLE SEARCH CONSOLE
+═══════════════════════════════════════════════════════════════
+
+После запуска:
+1. Зайди: search.google.com/search-console
+2. Добавь свой домен
+3. Подтверди владение (Netlify поддерживает DNS-подтверждение)
+4. Добавь sitemap: https://твойдомен.com/sitemap.xml
+5. Google начнёт индексировать страницы в течение 1-7 дней
+
+═══════════════════════════════════════════════════════════════
+ЧЕКЛИСТ ПЕРЕД ЗАПУСКОМ
+═══════════════════════════════════════════════════════════════
+
+[ ] Вставил Web3Forms ключ в js/main.js
+[ ] Заполнил форму на сайте → письмо пришло на Gmail ✓
+[ ] (Опционально) Google Sheets webhook настроен
+[ ] Сайт загружен на хостинг
+[ ] Домен подключён и HTTPS работает
+[ ] sitemap.xml отправлен в Google Search Console
+[ ] Google Business Profile создан и заполнен
+[ ] Телефон (980) 990-2911 активен и принимает звонки
+

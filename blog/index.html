@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Appliance repair tips, guides, promotions and local news from Time Appliance Repair — Charlotte NC's trusted appliance repair experts.">
+  <meta name="robots" content="index, follow">
+  <title>Appliance Repair Blog | Tips, Guides & Deals | Time Appliance Repair Charlotte NC</title>
+  <link rel="canonical" href="https://timeapplianceservice.com/blog/">
+  <link rel="icon" type="image/png" href="/images/logo.png">
+  <meta property="og:title" content="Appliance Repair Blog | Time Appliance Repair Charlotte NC">
+  <meta property="og:description" content="Expert appliance repair tips, cost guides, promotions and Charlotte area news from Time Appliance Repair.">
+  <meta property="og:url" content="https://timeapplianceservice.com/blog/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+  <style>
+    /* ── Blog-specific styles ── */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    @media(max-width:1024px) { .blog-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(max-width:640px)  { .blog-grid { grid-template-columns: 1fr; } }
+
+    .blog-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+    }
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,.12);
+      border-color: var(--orange);
+    }
+    .blog-card-img {
+      height: 200px;
+      background: linear-gradient(135deg, var(--gray-800), var(--gray-900));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-card-img::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.4));
+    }
+    .blog-card-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-category {
+      font-family: var(--font-display);
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--orange);
+      margin-bottom: 10px;
+    }
+    .blog-card-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--gray-900);
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    .blog-card-desc {
+      font-size: .875rem;
+      color: var(--gray-500);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--gray-200);
+    }
+    .blog-date {
+      font-size: .78rem;
+      color: var(--gray-400);
+      font-weight: 500;
+    }
+    .blog-read-more {
+      font-family: var(--font-display);
+      font-size: .8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--orange);
+    }
+
+    /* Featured post */
+    .blog-featured {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-bottom: 48px;
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+    .blog-featured:hover {
+      box-shadow: 0 16px 48px rgba(0,0,0,.12);
+      border-color: var(--orange);
+      transform: translateY(-3px);
+    }
+    .blog-featured-img {
+      background: linear-gradient(135deg, #1a0800, #2d1200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      min-height: 300px;
+    }
+    .blog-featured-body {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .blog-featured-label {
+      font-family: var(--font-display);
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: var(--orange);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .blog-featured-title {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--gray-900);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .blog-featured-desc {
+      color: var(--gray-500);
+      line-height: 1.7;
+      font-size: .95rem;
+    }
+    @media(max-width:768px) {
+      .blog-featured { grid-template-columns: 1fr; }
+      .blog-featured-img { min-height: 180px; }
+      .blog-featured-body { padding: 24px; }
+    }
+
+    /* Category filter pills */
+    .blog-filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .blog-filter-btn {
+      font-family: var(--font-display);
+      font-size: .8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      padding: 7px 16px;
+      border-radius: 100px;
+      border: 2px solid var(--gray-200);
+      color: var(--gray-600);
+      background: var(--white);
+      cursor: pointer;
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+    .blog-filter-btn:hover,
+    .blog-filter-btn.active {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: var(--white);
+    }
+
+    /* Sidebar */
+    .blog-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 48px;
+      align-items: start;
+    }
+    @media(max-width:1024px) { .blog-layout { grid-template-columns: 1fr; } }
+
+    .blog-sidebar-box {
+      background: var(--gray-100);
+      border-radius: var(--radius);
+      padding: 28px;
+      border: 1px solid var(--gray-200);
+      margin-bottom: 24px;
+    }
+    .blog-sidebar-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--gray-900);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--orange);
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="container page-hero-inner">
+      <nav class="breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Blog</span>
+      </nav>
+      <span class="badge badge-orange">📝 Tips, Guides &amp; Deals</span>
+      <h1 style="margin-top:12px;">Appliance Repair<br><span style="color:var(--orange);">Blog</span></h1>
+      <p>Expert tips, repair guides, promotions and local appliance news from Charlotte's trusted repair team.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--gray-100);">
+    <div class="container">
+
+      <!-- Category Filters -->
+      <div class="blog-filters reveal">
+        <a href="/blog/" class="blog-filter-btn active">All Posts</a>
+        <a href="/blog/?cat=guides" class="blog-filter-btn">Repair Guides</a>
+        <a href="/blog/?cat=tips" class="blog-filter-btn">Appliance Tips</a>
+        <a href="/blog/?cat=promotions" class="blog-filter-btn">💰 Promotions</a>
+        <a href="/blog/?cat=brands" class="blog-filter-btn">Brand Spotlight</a>
+        <a href="/blog/?cat=local" class="blog-filter-btn">Charlotte News</a>
+      </div>
+
+      <div class="blog-layout" style="margin-top:32px;">
+
+        <!-- Main content -->
+        <div>
+          <!-- Featured Post -->
+          <a href="/blog/why-is-my-refrigerator-not-cooling/" class="blog-featured reveal">
+            <div class="blog-featured-img">🧊</div>
+            <div class="blog-featured-body">
+              <div class="blog-featured-label">
+                <span style="width:8px;height:8px;border-radius:50%;background:var(--orange);display:inline-block;"></span>
+                Featured · Repair Guides
+              </div>
+              <h2 class="blog-featured-title">Why Is My Refrigerator Not Cooling? Top 5 Causes in Charlotte NC</h2>
+              <p class="blog-featured-desc">A refrigerator that stops cooling is one of the most stressful appliance problems. Here are the 5 most common causes — and what to do about each one.</p>
+              <div style="margin-top:20px;">
+                <span class="btn btn-primary btn-sm">Read Article →</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Blog Grid -->
+          <div class="blog-grid">
+
+            <a href="/blog/washer-repair-cost-charlotte-nc/" class="blog-card reveal">
+              <div class="blog-card-img">🫧</div>
+              <div class="blog-card-body">
+                <span class="blog-category">Repair Guides</span>
+                <h3 class="blog-card-title">How Much Does Washer Repair Cost in Charlotte NC?</h3>
+                <p class="blog-card-desc">Honest breakdown of washer repair costs in Charlotte — and when repair makes more sense than replacement.</p>
+                <div class="blog-card-meta">
+                  <span class="blog-date">June 8, 2025</span>
+                  <span class="blog-read-more">Read More →</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="/blog/summer-special-50-off-june-2025/" class="blog-card reveal delay-1">
+              <div class="blog-card-img" style="background:linear-gradient(135deg,#7a1a00,#f54e08);">🎁</div>
+              <div class="blog-card-body">
+                <span class="blog-category" style="color:#22c55e;">💰 Promotion</span>
+                <h3 class="blog-card-title">Summer Special: $50 Off Appliance Repair — June 2025</h3>
+                <p class="blog-card-desc">Limited time offer — book online this June and save $50 on labor. Same-day service available across Charlotte.</p>
+                <div class="blog-card-meta">
+                  <span class="blog-date">June 10, 2025</span>
+                  <span class="blog-read-more">Claim Offer →</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Placeholder for future posts -->
+            <div class="blog-card reveal delay-2" style="border-style:dashed;align-items:center;justify-content:center;min-height:280px;cursor:default;">
+              <div style="text-align:center;padding:32px;">
+                <div style="font-size:2.5rem;margin-bottom:12px;">✍️</div>
+                <p style="font-family:var(--font-display);font-weight:700;color:var(--gray-400);font-size:1rem;">More articles coming soon</p>
+                <p style="font-size:.8rem;color:var(--gray-400);margin-top:6px;">Weekly tips &amp; guides</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div style="position:sticky;top:120px;">
+
+          <!-- CTA Box -->
+          <div style="background:var(--orange);border-radius:var(--radius);padding:28px;margin-bottom:24px;text-align:center;">
+            <p style="font-family:var(--font-display);font-size:1.3rem;font-weight:900;color:white;margin-bottom:8px;">Appliance Broken?</p>
+            <p style="color:rgba(255,255,255,.9);font-size:.875rem;margin-bottom:20px;">Same-day service available in Charlotte &amp; surrounding areas.</p>
+            <a href="tel:+19809902911" class="btn btn-white btn-full" style="margin-bottom:10px;">📞 (980) 990-2911</a>
+            <a href="/#book" class="btn btn-outline btn-full btn-sm">📅 Book Online — $50 Off</a>
+          </div>
+
+          <!-- Popular Services -->
+          <div class="blog-sidebar-box">
+            <p class="blog-sidebar-title">Popular Services</p>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <a href="/refrigerator-repair/" style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--gray-200);color:var(--gray-700);font-size:.875rem;font-weight:500;transition:color .2s;">🧊 Refrigerator Repair</a>
+              <a href="/washer-repair/" style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--gray-200);color:var(--gray-700);font-size:.875rem;font-weight:500;">🫧 Washer Repair</a>
+              <a href="/dryer-repair/" style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--gray-200);color:var(--gray-700);font-size:.875rem;font-weight:500;">🌀 Dryer Repair</a>
+              <a href="/dishwasher-repair/" style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--gray-200);color:var(--gray-700);font-size:.875rem;font-weight:500;">🍽️ Dishwasher Repair</a>
+              <a href="/oven-repair/" style="display:flex;align-items:center;gap:10px;padding:8px 0;color:var(--gray-700);font-size:.875rem;font-weight:500;">🔥 Oven Repair</a>
+            </div>
+          </div>
+
+          <!-- Service Areas -->
+          <div class="blog-sidebar-box">
+            <p class="blog-sidebar-title">Service Areas</p>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;">
+              <a href="/charlotte-appliance-repair/" style="font-size:.78rem;padding:4px 10px;background:white;border:1px solid var(--gray-200);border-radius:100px;color:var(--gray-600);transition:all .2s;">Charlotte</a>
+              <a href="/ballantyne-appliance-repair/" style="font-size:.78rem;padding:4px 10px;background:white;border:1px solid var(--gray-200);border-radius:100px;color:var(--gray-600);">Ballantyne</a>
+              <a href="/matthews-appliance-repair/" style="font-size:.78rem;padding:4px 10px;background:white;border:1px solid var(--gray-200);border-radius:100px;color:var(--gray-600);">Matthews</a>
+              <a href="/huntersville-appliance-repair/" style="font-size:.78rem;padding:4px 10px;background:white;border:1px solid var(--gray-200);border-radius:100px;color:var(--gray-600);">Huntersville</a>
+              <a href="/mint-hill-appliance-repair/" style="font-size:.78rem;padding:4px 10px;background:white;border:1px solid var(--gray-200);border-radius:100px;color:var(--gray-600);">Mint Hill</a>
+              <a href="/mooresville-appliance-repair/" style="font-size:.78rem;padding:4px 10px;background:white;border:1px solid var(--gray-200);border-radius:100px;color:var(--gray-600);">Mooresville</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-section">
+    <div class="container cta-inner">
+      <h2 class="cta-title">Need Appliance Repair Today?</h2>
+      <p class="cta-desc">Same-day service across Charlotte. $50 off your first repair.</p>
+      <div class="cta-actions">
+        <a href="tel:+19809902911" class="btn btn-white btn-xl">📞 (980) 990-2911</a>
+        <a href="/#book" class="btn btn-outline btn-xl">📅 Book Online</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

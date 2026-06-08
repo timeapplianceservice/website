@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" width="200" height="220">
+  <defs>
+    <linearGradient id="imbody" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c8d8ec"/>
+      <stop offset="40%" stop-color="#e8f2ff"/>
+      <stop offset="100%" stop-color="#a8b8d0"/>
+    </linearGradient>
+    <linearGradient id="imtank" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(160,210,255,0.5)"/>
+      <stop offset="100%" stop-color="rgba(80,140,200,0.2)"/>
+    </linearGradient>
+    <filter id="ims"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="rgba(0,0,0,0.2)"/></filter>
+  </defs>
+  <ellipse cx="100" cy="216" rx="58" ry="5" fill="rgba(0,0,0,0.12)"/>
+  <!-- Body -->
+  <rect x="30" y="18" width="140" height="192" rx="10" fill="url(#imbody)" filter="url(#ims)"/>
+  <!-- Top panel -->
+  <rect x="30" y="18" width="140" height="36" rx="10" fill="#d0dce8"/>
+  <rect x="30" y="40" width="140" height="14" fill="#d0dce8"/>
+  <!-- Display -->
+  <rect x="55" y="24" width="90" height="22" rx="4" fill="rgba(0,20,60,0.2)"/>
+  <rect x="60" y="27" width="35" height="16" rx="3" fill="rgba(0,180,255,0.35)"/>
+  <circle cx="130" cy="34" r="5" fill="#00e5ff" opacity="0.8"/>
+  <circle cx="118" cy="34" r="4" fill="#F54E08" opacity="0.7"/>
+  <!-- Main window / ice tray area -->
+  <rect x="38" y="60" width="124" height="90" rx="6" fill="url(#imtank)" stroke="rgba(100,160,220,0.3)" stroke-width="1"/>
+  <!-- Ice cubes -->
+  <rect x="48" y="70" width="22" height="20" rx="3" fill="rgba(180,230,255,0.7)" stroke="rgba(140,200,240,0.5)" stroke-width="1"/>
+  <rect x="76" y="70" width="22" height="20" rx="3" fill="rgba(180,230,255,0.7)" stroke="rgba(140,200,240,0.5)" stroke-width="1"/>
+  <rect x="104" y="70" width="22" height="20" rx="3" fill="rgba(180,230,255,0.7)" stroke="rgba(140,200,240,0.5)" stroke-width="1"/>
+  <rect x="132" y="70" width="22" height="20" rx="3" fill="rgba(180,230,255,0.65)" stroke="rgba(140,200,240,0.5)" stroke-width="1"/>
+  <rect x="48" y="97" width="22" height="20" rx="3" fill="rgba(200,240,255,0.6)" stroke="rgba(140,200,240,0.5)" stroke-width="1"/>
+  <rect x="76" y="97" width="22" height="20" rx="3" fill="rgba(200,240,255,0.6)" stroke="rgba(140,200,240,0.5)" stroke-width="1"/>
+  <rect x="104" y="97" width="22" height="20" rx="3" fill="rgba(200,240,255,0.6)" stroke="rgba(140,200,240,0.5)" stroke-width="1"/>
+  <rect x="132" y="97" width="22" height="20" rx="3" fill="rgba(200,240,255,0.55)" stroke="rgba(140,200,240,0.5)" stroke-width="1"/>
+  <!-- Ice bin -->
+  <rect x="38" y="156" width="124" height="42" rx="5" fill="rgba(140,180,220,0.2)" stroke="rgba(120,160,200,0.3)" stroke-width="1"/>
+  <!-- Spilled ice hint -->
+  <rect x="50" y="165" width="16" height="14" rx="3" fill="rgba(200,240,255,0.7)"/>
+  <rect x="72" y="168" width="14" height="12" rx="3" fill="rgba(200,240,255,0.6)"/>
+  <rect x="92" y="163" width="16" height="14" rx="3" fill="rgba(200,240,255,0.65)"/>
+  <!-- Water inlet -->
+  <rect x="158" y="90" width="8" height="40" rx="4" fill="#a0b0c0"/>
+  <!-- Highlight -->
+  <rect x="35" y="22" width="7" height="180" rx="3.5" fill="rgba(255,255,255,0.22)"/>
+</svg>

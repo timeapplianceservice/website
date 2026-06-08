@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 64" width="190" height="64">
+  <rect width="190" height="64" rx="4" fill="none"/>
+  <!-- Diamond emblem -->
+  <polygon points="32,12 46,32 32,52 18,32" fill="none" stroke="#8b6914" stroke-width="2.5"/>
+  <polygon points="32,20 40,32 32,44 24,32" fill="#8b6914" opacity="0.3"/>
+  <!-- DACOR wordmark -->
+  <text x="118" y="44" font-family="Georgia,'Times New Roman',serif"
+        font-size="26" font-weight="700" fill="#1a1a1a"
+        text-anchor="middle" letter-spacing="4">DACOR</text>
+</svg>

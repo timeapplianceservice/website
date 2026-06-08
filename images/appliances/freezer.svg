@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="fzbody" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c8d8e8"/>
+      <stop offset="40%" stop-color="#e8f0f8"/>
+      <stop offset="100%" stop-color="#a8b8cc"/>
+    </linearGradient>
+    <linearGradient id="fzfrost" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(200,230,255,0.5)"/>
+      <stop offset="100%" stop-color="rgba(140,180,220,0.1)"/>
+    </linearGradient>
+    <filter id="fzs"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="rgba(0,0,0,0.2)"/></filter>
+  </defs>
+  <ellipse cx="100" cy="236" rx="62" ry="5" fill="rgba(0,0,0,0.12)"/>
+  <!-- Body -->
+  <rect x="28" y="18" width="144" height="212" rx="10" fill="url(#fzbody)" filter="url(#fzs)"/>
+  <!-- Frost/ice tint panel -->
+  <rect x="32" y="22" width="136" height="204" rx="7" fill="url(#fzfrost)"/>
+  <!-- Top control bar -->
+  <rect x="28" y="18" width="144" height="32" rx="10" fill="#d0dce8"/>
+  <rect x="28" y="36" width="144" height="14" fill="#d0dce8"/>
+  <!-- Temp display -->
+  <rect x="70" y="24" width="60" height="18" rx="4" fill="rgba(0,20,60,0.2)"/>
+  <rect x="75" y="27" width="20" height="12" rx="2" fill="rgba(100,200,255,0.4)"/>
+  <!-- Indicator light -->
+  <circle cx="148" cy="31" r="5" fill="#00e5ff" opacity="0.8"/>
+  <!-- Door seam -->
+  <rect x="32" y="52" width="136" height="176" rx="6" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+  <!-- Handle -->
+  <rect x="150" y="80" width="10" height="100" rx="5" fill="#a0b0c0"/>
+  <!-- Frost crystals decorative -->
+  <circle cx="60" cy="100" r="14" fill="rgba(180,220,255,0.25)"/>
+  <circle cx="100" cy="140" r="20" fill="rgba(180,220,255,0.2)"/>
+  <circle cx="140" cy="90" r="10" fill="rgba(180,220,255,0.2)"/>
+  <!-- Snowflake icons -->
+  <text x="56" y="105" font-size="16" fill="rgba(150,200,240,0.6)" text-anchor="middle">❄</text>
+  <text x="100" y="145" font-size="20" fill="rgba(150,200,240,0.5)" text-anchor="middle">❄</text>
+  <text x="140" y="94" font-size="12" fill="rgba(150,200,240,0.5)" text-anchor="middle">❄</text>
+  <!-- Highlight -->
+  <rect x="33" y="22" width="7" height="198" rx="3.5" fill="rgba(255,255,255,0.22)"/>
+</svg>

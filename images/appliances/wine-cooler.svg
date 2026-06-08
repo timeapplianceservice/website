@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 250" width="180" height="250">
+  <defs>
+    <linearGradient id="wcbody" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1a1a2a"/>
+      <stop offset="35%" stop-color="#2a2a3a"/>
+      <stop offset="100%" stop-color="#0f0f1f"/>
+    </linearGradient>
+    <linearGradient id="wcglass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(60,80,120,0.5)"/>
+      <stop offset="100%" stop-color="rgba(20,30,60,0.6)"/>
+    </linearGradient>
+    <radialGradient id="wcbottle" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="rgba(100,160,80,0.5)"/>
+      <stop offset="100%" stop-color="rgba(40,80,30,0.3)"/>
+    </radialGradient>
+    <filter id="wcs"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="rgba(0,0,0,0.3)"/></filter>
+  </defs>
+  <ellipse cx="90" cy="246" rx="55" ry="5" fill="rgba(0,0,0,0.15)"/>
+  <!-- Body (dark stainless) -->
+  <rect x="22" y="18" width="136" height="222" rx="10" fill="url(#wcbody)" filter="url(#wcs)"/>
+  <!-- Glass door -->
+  <rect x="28" y="24" width="124" height="180" rx="6" fill="url(#wcglass)"/>
+  <!-- Glass reflection -->
+  <rect x="30" y="26" width="10" height="176" rx="5" fill="rgba(255,255,255,0.06)"/>
+  <line x1="55" y1="27" x2="52" y2="202" stroke="rgba(255,255,255,0.04)" stroke-width="12"/>
+  <!-- Bottle shelves & bottles -->
+  <!-- Shelf 1 -->
+  <rect x="28" y="70" width="124" height="3" fill="rgba(255,255,255,0.12)"/>
+  <ellipse cx="60" cy="62" rx="10" ry="16" fill="url(#wcbottle)"/>
+  <rect x="57" y="46" width="6" height="12" rx="3" fill="rgba(60,100,40,0.6)"/>
+  <ellipse cx="85" cy="62" rx="10" ry="16" fill="rgba(80,120,60,0.4)"/>
+  <rect x="82" y="46" width="6" height="12" rx="3" fill="rgba(60,100,40,0.5)"/>
+  <ellipse cx="110" cy="62" rx="10" ry="16" fill="rgba(100,60,60,0.45)"/>
+  <rect x="107" y="46" width="6" height="12" rx="3" fill="rgba(80,40,40,0.6)"/>
+  <ellipse cx="135" cy="62" rx="10" ry="16" fill="rgba(80,120,60,0.4)"/>
+  <rect x="132" y="46" width="6" height="12" rx="3" fill="rgba(60,100,40,0.5)"/>
+  <!-- Shelf 2 -->
+  <rect x="28" y="120" width="124" height="3" fill="rgba(255,255,255,0.12)"/>
+  <ellipse cx="55" cy="112" rx="10" ry="16" fill="rgba(100,60,60,0.45)"/>
+  <rect x="52" y="96" width="6" height="12" rx="3" fill="rgba(80,40,40,0.6)"/>
+  <ellipse cx="80" cy="112" rx="10" ry="16" fill="url(#wcbottle)"/>
+  <rect x="77" y="96" width="6" height="12" rx="3" fill="rgba(60,100,40,0.6)"/>
+  <ellipse cx="105" cy="112" rx="10" ry="16" fill="rgba(80,120,60,0.4)"/>
+  <rect x="102" y="96" width="6" height="12" rx="3" fill="rgba(60,100,40,0.5)"/>
+  <ellipse cx="130" cy="112" rx="10" ry="16" fill="rgba(100,60,60,0.4)"/>
+  <rect x="127" y="96" width="6" height="12" rx="3" fill="rgba(80,40,40,0.5)"/>
+  <!-- Shelf 3 -->
+  <rect x="28" y="168" width="124" height="3" fill="rgba(255,255,255,0.12)"/>
+  <ellipse cx="60" cy="160" rx="10" ry="16" fill="rgba(80,120,60,0.4)"/>
+  <ellipse cx="85" cy="160" rx="10" ry="16" fill="url(#wcbottle)"/>
+  <ellipse cx="110" cy="160" rx="10" ry="16" fill="rgba(100,60,60,0.4)"/>
+  <ellipse cx="135" cy="160" rx="10" ry="16" fill="rgba(80,120,60,0.35)"/>
+  <!-- Temperature display bottom -->
+  <rect x="28" y="208" width="124" height="28" rx="5" fill="rgba(0,0,0,0.4)"/>
+  <rect x="50" y="213" width="50" height="14" rx="3" fill="rgba(0,180,255,0.25)"/>
+  <text x="75" y="223" font-size="10" fill="rgba(0,220,255,0.8)" text-anchor="middle" font-family="monospace">54°F</text>
+  <circle cx="135" cy="220" r="5" fill="#00e5ff" opacity="0.6"/>
+  <!-- Handle bar -->
+  <rect x="35" y="196" width="110" height="9" rx="4.5" fill="#333344"/>
+  <rect x="40" y="198" width="100" height="5" rx="2.5" fill="#444455"/>
+</svg>

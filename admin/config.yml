@@ -1,0 +1,30 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/blog-images"
+public_folder: "/static/blog-images"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "blog-posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string", hint: "Example: Why Is My Refrigerator Not Cooling?" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string", default: "Time Appliance Repair" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Appliance Tips", value: "tips" }
+          - { label: "Repair Guides", value: "guides" }
+          - { label: "Promotions & Deals", value: "promotions" }
+          - { label: "Brand Spotlight", value: "brands" }
+          - { label: "Charlotte News", value: "local" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Short Description (for Google)", name: "description", widget: "text", hint: "150-160 characters — appears in Google search results" }
+      - { label: "Content", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list", required: false, hint: "e.g. refrigerator, charlotte, samsung" }

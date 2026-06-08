@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://timeapplianceservice.com/sitemap.xml
+
+Disallow: /admin/
+Disallow: /*.py$
+Disallow: /*.json$

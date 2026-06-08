@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 240" width="220" height="240">
+  <defs>
+    <linearGradient id="rgbody" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c0c8d4"/>
+      <stop offset="35%" stop-color="#e8ecf2"/>
+      <stop offset="100%" stop-color="#a0aab8"/>
+    </linearGradient>
+    <radialGradient id="burner" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#888"/>
+      <stop offset="40%" stop-color="#555"/>
+      <stop offset="100%" stop-color="#333"/>
+    </radialGradient>
+    <radialGradient id="flame" cx="50%" cy="70%" r="50%">
+      <stop offset="0%" stop-color="#fff176" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#ff9800" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#f44336" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="rgs"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="rgba(0,0,0,0.2)"/></filter>
+  </defs>
+  <ellipse cx="110" cy="236" rx="70" ry="5" fill="rgba(0,0,0,0.12)"/>
+  <!-- Body -->
+  <rect x="18" y="18" width="184" height="212" rx="10" fill="url(#rgbody)" filter="url(#rgs)"/>
+  <!-- Cooktop surface -->
+  <rect x="18" y="18" width="184" height="90" rx="10" fill="#d0d8e0"/>
+  <rect x="18" y="80" width="184" height="28" fill="#d0d8e0"/>
+  <!-- Grates -->
+  <rect x="28" y="25" width="76" height="70" rx="4" fill="rgba(0,0,0,0.12)"/>
+  <rect x="116" y="25" width="76" height="70" rx="4" fill="rgba(0,0,0,0.12)"/>
+  <!-- Burners -->
+  <circle cx="66" cy="52" r="20" fill="url(#burner)"/>
+  <circle cx="66" cy="52" r="8" fill="#222"/>
+  <circle cx="66" cy="52" r="4" fill="#111"/>
+  <!-- Flame on one burner -->
+  <ellipse cx="66" cy="46" rx="8" ry="10" fill="url(#flame)" opacity="0.8"/>
+  <circle cx="154" cy="52" r="20" fill="url(#burner)"/>
+  <circle cx="154" cy="52" r="8" fill="#222"/>
+  <circle cx="154" cy="52" r="4" fill="#111"/>
+  <!-- Control panel -->
+  <rect x="18" y="108" width="184" height="30" fill="#c8d0dc"/>
+  <!-- Knobs -->
+  <circle cx="44" cy="123" r="10" fill="#b0b8c4" stroke="#909aa8" stroke-width="1"/>
+  <circle cx="44" cy="123" r="6" fill="#c8d0dc"/>
+  <circle cx="72" cy="123" r="10" fill="#b0b8c4" stroke="#909aa8" stroke-width="1"/>
+  <circle cx="72" cy="123" r="6" fill="#c8d0dc"/>
+  <circle cx="110" cy="123" r="11" fill="#F54E08" stroke="#d04000" stroke-width="1.5"/>
+  <circle cx="110" cy="123" r="6" fill="#ff6a2a"/>
+  <circle cx="148" cy="123" r="10" fill="#b0b8c4" stroke="#909aa8" stroke-width="1"/>
+  <circle cx="148" cy="123" r="6" fill="#c8d0dc"/>
+  <circle cx="176" cy="123" r="10" fill="#b0b8c4" stroke="#909aa8" stroke-width="1"/>
+  <circle cx="176" cy="123" r="6" fill="#c8d0dc"/>
+  <!-- Oven door window -->
+  <rect x="28" y="145" width="164" height="72" rx="6" fill="rgba(0,0,0,0.2)"/>
+  <rect x="32" y="149" width="156" height="64" rx="4" fill="rgba(80,100,130,0.3)"/>
+  <!-- Glass shine -->
+  <rect x="36" y="153" width="10" height="56" rx="5" fill="rgba(255,255,255,0.1)"/>
+  <!-- Handle -->
+  <rect x="35" y="225" width="150" height="10" rx="5" fill="#a8b0bc"/>
+  <!-- Highlight -->
+  <rect x="23" y="23" width="7" height="195" rx="3.5" fill="rgba(255,255,255,0.2)"/>
+</svg>

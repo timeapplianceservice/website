@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="bodyG" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d8dde4"/>
+      <stop offset="40%" stop-color="#f0f2f5"/>
+      <stop offset="100%" stop-color="#b8bec8"/>
+    </linearGradient>
+    <linearGradient id="topG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8ecf0"/>
+      <stop offset="100%" stop-color="#c8cdd6"/>
+    </linearGradient>
+    <linearGradient id="handleG" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a0a8b4"/>
+      <stop offset="50%" stop-color="#d0d5de"/>
+      <stop offset="100%" stop-color="#8890a0"/>
+    </linearGradient>
+    <linearGradient id="shadowG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(0,0,0,0.15)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="rgba(0,0,0,0.2)"/></filter>
+  </defs>
+  <!-- Shadow -->
+  <ellipse cx="100" cy="232" rx="60" ry="6" fill="rgba(0,0,0,0.12)"/>
+  <!-- Body -->
+  <rect x="30" y="20" width="140" height="210" rx="10" fill="url(#bodyG)" filter="url(#shadow)"/>
+  <!-- Top section (freezer) -->
+  <rect x="30" y="20" width="140" height="88" rx="10" fill="url(#topG)"/>
+  <!-- Divider line -->
+  <rect x="30" y="104" width="140" height="6" fill="#b0b8c4"/>
+  <!-- Door seam top -->
+  <rect x="33" y="23" width="134" height="84" rx="8" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+  <!-- Door seam bottom -->
+  <rect x="33" y="113" width="134" height="114" rx="8" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+  <!-- Handle top -->
+  <rect x="148" y="42" width="10" height="48" rx="5" fill="url(#handleG)"/>
+  <!-- Handle bottom -->
+  <rect x="148" y="128" width="10" height="72" rx="5" fill="url(#handleG)"/>
+  <!-- Freezer interior hint -->
+  <rect x="45" y="34" width="90" height="60" rx="4" fill="rgba(200,220,240,0.3)"/>
+  <!-- Ice/frost visual -->
+  <circle cx="65" cy="58" r="8" fill="rgba(180,210,240,0.5)"/>
+  <circle cx="85" cy="50" r="5" fill="rgba(180,210,240,0.4)"/>
+  <!-- Water dispenser area -->
+  <rect x="48" y="120" width="38" height="50" rx="4" fill="rgba(160,190,220,0.2)" stroke="rgba(150,170,200,0.3)" stroke-width="1"/>
+  <rect x="52" y="125" width="30" height="20" rx="3" fill="rgba(140,180,220,0.25)"/>
+  <circle cx="67" cy="158" r="5" fill="rgba(100,150,200,0.3)" stroke="rgba(80,130,180,0.4)" stroke-width="1"/>
+  <!-- Highlight -->
+  <rect x="35" y="25" width="8" height="200" rx="4" fill="rgba(255,255,255,0.25)"/>
+  <!-- Brand area -->
+  <rect x="55" y="185" width="80" height="12" rx="3" fill="rgba(160,170,185,0.3)"/>
+</svg>
