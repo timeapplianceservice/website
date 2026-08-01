@@ -155,6 +155,20 @@ TAR.navHTML = `
       <a href="/tega-cay-appliance-repair/" class="mobile-nav-sub-link">Tega Cay SC</a>
     </div>
   </div>
+  <div class="mobile-nav-parent">
+    <a href="/commercial-appliance-repair/" class="mobile-nav-link">
+      Commercial
+      <button class="mobile-nav-toggle">+</button>
+    </a>
+    <div class="mobile-nav-sub">
+      <a href="/commercial-appliance-repair/" class="mobile-nav-sub-link" style="color:var(--orange);font-weight:700;">Commercial - All Services</a>
+      <a href="/commercial-refrigeration-repair/" class="mobile-nav-sub-link">Commercial Refrigeration</a>
+      <a href="/commercial-freezer-repair/" class="mobile-nav-sub-link">Commercial Freezer Repair</a>
+      <a href="/commercial-steamer-repair/" class="mobile-nav-sub-link">Commercial Steamer Repair</a>
+      <a href="/commercial-griddle-repair/" class="mobile-nav-sub-link">Commercial Griddle Repair</a>
+      <a href="/commercial-scotsman-repair/" class="mobile-nav-sub-link">Scotsman Ice Machine Repair</a>
+    </div>
+  </div>
   <a href="/faq/" class="mobile-nav-link">FAQ</a>
   <a href="/blog/" class="mobile-nav-link">Blog</a>
   <a href="/index.html#reviews" class="mobile-nav-link">Reviews</a>
