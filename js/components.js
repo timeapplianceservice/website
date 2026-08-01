@@ -75,7 +75,17 @@ TAR.navHTML = `
       </div>
 
       <a href="/faq/" class="nav-link">FAQ</a>
-      <a href="/commercial-appliance-repair/" class="nav-link">Commercial</a>
+      <div class="nav-dropdown">
+        <a href="/commercial-appliance-repair/" class="nav-link">Commercial ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="/commercial-appliance-repair/" class="nav-dropdown-item" style="color:var(--orange);font-weight:700;">📍 All Commercial Services</a>
+          <a href="/commercial-refrigeration-repair/" class="nav-dropdown-item">🧊 Commercial Refrigeration</a>
+          <a href="/commercial-freezer-repair/" class="nav-dropdown-item">❄️ Commercial Freezer Repair</a>
+          <a href="/commercial-steamer-repair/" class="nav-dropdown-item">💨 Commercial Steamer Repair</a>
+          <a href="/commercial-griddle-repair/" class="nav-dropdown-item">🔥 Commercial Griddle Repair</a>
+          <a href="/commercial-scotsman-repair/" class="nav-dropdown-item">🧊 Scotsman Ice Machine Repair</a>
+        </div>
+      </div>
       <a href="/blog/" class="nav-link">Blog</a>
       <a href="/index.html#reviews" class="nav-link">Reviews</a>
     </div>
