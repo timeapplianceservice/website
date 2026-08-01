@@ -75,6 +75,7 @@ TAR.navHTML = `
       </div>
 
       <a href="/faq/" class="nav-link">FAQ</a>
+      <a href="/commercial-appliance-repair/" class="nav-link">Commercial</a>
       <a href="/blog/" class="nav-link">Blog</a>
       <a href="/index.html#reviews" class="nav-link">Reviews</a>
     </div>
