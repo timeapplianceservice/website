@@ -608,6 +608,31 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 }
 .mobile-nav-link:hover { color: var(--orange); }
 
+.mobile-nav-parent {
+  position: relative;
+}
+.mobile-nav-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 56px;
+  height: 56px;
+  background: rgba(255,255,255,.06);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.mobile-nav-toggle:active {
+  background: rgba(255,255,255,.14);
+}
+
+
 .mobile-nav-sub {
   padding: 8px 0 4px 16px;
   display: none;
