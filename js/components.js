@@ -79,7 +79,7 @@ TAR.navHTML = `
         <a href="/commercial-appliance-repair/" class="nav-link">Commercial ▾</a>
         <div class="nav-dropdown-menu">
           <a href="/commercial-appliance-repair/" class="nav-dropdown-item" style="color:var(--orange);font-weight:700;">📍 All Commercial Services</a>
-          <a href="/commercial-refrigeration-repair/" class="nav-dropdown-item">🧊 Commercial Refrigeration</a>
+          <a href="/commercial-refrigerator-repair/" class="nav-dropdown-item">🧊 Commercial Refrigeration</a>
           <a href="/commercial-freezer-repair/" class="nav-dropdown-item">❄️ Commercial Freezer Repair</a>
           <a href="/commercial-steamer-repair/" class="nav-dropdown-item">💨 Commercial Steamer Repair</a>
           <a href="/commercial-griddle-repair/" class="nav-dropdown-item">🔥 Commercial Griddle Repair</a>
@@ -162,7 +162,7 @@ TAR.navHTML = `
     </a>
     <div class="mobile-nav-sub">
       <a href="/commercial-appliance-repair/" class="mobile-nav-sub-link" style="color:var(--orange);font-weight:700;">Commercial - All Services</a>
-      <a href="/commercial-refrigeration-repair/" class="mobile-nav-sub-link">Commercial Refrigeration</a>
+      <a href="/commercial-refrigerator-repair/" class="mobile-nav-sub-link">Commercial Refrigeration</a>
       <a href="/commercial-freezer-repair/" class="mobile-nav-sub-link">Commercial Freezer Repair</a>
       <a href="/commercial-steamer-repair/" class="mobile-nav-sub-link">Commercial Steamer Repair</a>
       <a href="/commercial-griddle-repair/" class="mobile-nav-sub-link">Commercial Griddle Repair</a>
