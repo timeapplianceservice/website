@@ -75,17 +75,6 @@ TAR.navHTML = `
       </div>
 
       <a href="/faq/" class="nav-link">FAQ</a>
-      <div class="nav-dropdown">
-        <a href="/commercial-appliance-repair/" class="nav-link">Commercial ▾</a>
-        <div class="nav-dropdown-menu">
-          <a href="/commercial-appliance-repair/" class="nav-dropdown-item" style="color:var(--orange);font-weight:700;">📍 All Commercial Services</a>
-          <a href="/commercial-refrigerator-repair/" class="nav-dropdown-item">🧊 Commercial Refrigeration</a>
-          <a href="/commercial-freezer-repair/" class="nav-dropdown-item">❄️ Commercial Freezer Repair</a>
-          <a href="/commercial-steamer-repair/" class="nav-dropdown-item">💨 Commercial Steamer Repair</a>
-          <a href="/commercial-griddle-repair/" class="nav-dropdown-item">🔥 Commercial Griddle Repair</a>
-          <a href="/commercial-scotsman-repair/" class="nav-dropdown-item">🧊 Scotsman Ice Machine Repair</a>
-        </div>
-      </div>
       <a href="/blog/" class="nav-link">Blog</a>
       <a href="/index.html#reviews" class="nav-link">Reviews</a>
     </div>
@@ -153,20 +142,6 @@ TAR.navHTML = `
       <a href="/mint-hill-appliance-repair/" class="mobile-nav-sub-link">Mint Hill</a>
       <a href="/fort-mill-appliance-repair/" class="mobile-nav-sub-link">Fort Mill SC</a>
       <a href="/tega-cay-appliance-repair/" class="mobile-nav-sub-link">Tega Cay SC</a>
-    </div>
-  </div>
-  <div class="mobile-nav-parent">
-    <a href="/commercial-appliance-repair/" class="mobile-nav-link">
-      Commercial
-      <button class="mobile-nav-toggle">+</button>
-    </a>
-    <div class="mobile-nav-sub">
-      <a href="/commercial-appliance-repair/" class="mobile-nav-sub-link" style="color:var(--orange);font-weight:700;">Commercial - All Services</a>
-      <a href="/commercial-refrigerator-repair/" class="mobile-nav-sub-link">Commercial Refrigeration</a>
-      <a href="/commercial-freezer-repair/" class="mobile-nav-sub-link">Commercial Freezer Repair</a>
-      <a href="/commercial-steamer-repair/" class="mobile-nav-sub-link">Commercial Steamer Repair</a>
-      <a href="/commercial-griddle-repair/" class="mobile-nav-sub-link">Commercial Griddle Repair</a>
-      <a href="/commercial-scotsman-repair/" class="mobile-nav-sub-link">Scotsman Ice Machine Repair</a>
     </div>
   </div>
   <a href="/faq/" class="mobile-nav-link">FAQ</a>
