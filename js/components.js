@@ -24,7 +24,7 @@ TAR.navHTML = `
 
     <div class="nav-links">
       <div class="nav-dropdown">
-        <a href="/services/" class="nav-link">Services ▾</a>
+        <a href="/services/" class="nav-link">Appliances ▾</a>
         <div class="nav-dropdown-menu">
           <a href="/refrigerator-repair/" class="nav-dropdown-item">🧊 Refrigerator Repair</a>
           <a href="/washer-repair/" class="nav-dropdown-item">🫧 Washer Repair</a>
@@ -120,7 +120,7 @@ TAR.navHTML = `
 <div class="mobile-nav" id="mobile-nav">
   <div class="mobile-nav-parent">
     <a href="/services/" class="mobile-nav-link">
-      Services
+      Appliances
       <button class="mobile-nav-toggle">+</button>
     </a>
     <div class="mobile-nav-sub">
@@ -246,7 +246,7 @@ TAR.footerHTML = `
     </div>
 
     <div>
-      <p class="footer-h">Services</p>
+      <p class="footer-h">Appliances</p>
       <a href="/refrigerator-repair/" class="footer-link">Refrigerator Repair</a>
       <a href="/washer-repair/" class="footer-link">Washer Repair</a>
       <a href="/dryer-repair/" class="footer-link">Dryer Repair</a>
