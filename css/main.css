@@ -1471,6 +1471,14 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .why-grid { grid-template-columns: 1fr; }
 }
 
+/* Nav has 8 top-level items (Services, Brands, Service Areas, Commercial,
+   HVAC, FAQ, Blog, Reviews) — switch to the hamburger earlier than the
+   general mobile breakpoint so it never wraps to two lines. */
+@media (max-width: 1150px) and (min-width: 769px) {
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+}
+
 /* ============================================================
    RESPONSIVE — MOBILE
    ============================================================ */

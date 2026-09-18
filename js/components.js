@@ -74,6 +74,30 @@ TAR.navHTML = `
         </div>
       </div>
 
+      <div class="nav-dropdown">
+        <a href="/commercial-appliance-repair/" class="nav-link">Commercial ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="/commercial-appliance-repair/" class="nav-dropdown-item" style="color:var(--orange);font-weight:700;">📍 All Commercial Kitchen Services</a>
+          <a href="/commercial-oven-repair/" class="nav-dropdown-item">🔥 Commercial Oven Repair</a>
+          <a href="/commercial-range-repair/" class="nav-dropdown-item">🔥 Commercial Range Repair</a>
+          <a href="/commercial-fryer-repair/" class="nav-dropdown-item">🍳 Commercial Fryer Repair</a>
+          <a href="/commercial-griddle-repair/" class="nav-dropdown-item">🍳 Commercial Griddle Repair</a>
+          <a href="/commercial-dishwasher-repair/" class="nav-dropdown-item">🍽️ Commercial Dishwasher Repair</a>
+          <a href="/commercial-coffee-machine-repair/" class="nav-dropdown-item">☕ Commercial Coffee Machine Repair</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <a href="/hvac-repair/" class="nav-link">HVAC ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="/hvac-repair/" class="nav-dropdown-item" style="color:var(--orange);font-weight:700;">📍 All HVAC Repair Services</a>
+          <a href="/air-conditioner-not-cooling/" class="nav-dropdown-item">🥵 AC Not Cooling</a>
+          <a href="/furnace-not-heating/" class="nav-dropdown-item">🥶 Furnace Not Heating</a>
+          <a href="/thermostat-not-working/" class="nav-dropdown-item">🌡️ Thermostat Repair</a>
+          <a href="/hvac-tune-up-maintenance/" class="nav-dropdown-item">🛠️ Tune-Up &amp; Maintenance</a>
+        </div>
+      </div>
+
       <a href="/faq/" class="nav-link">FAQ</a>
       <a href="/blog/" class="nav-link">Blog</a>
       <a href="/index.html#reviews" class="nav-link">Reviews</a>
@@ -142,6 +166,34 @@ TAR.navHTML = `
       <a href="/mint-hill-appliance-repair/" class="mobile-nav-sub-link">Mint Hill</a>
       <a href="/fort-mill-appliance-repair/" class="mobile-nav-sub-link">Fort Mill SC</a>
       <a href="/tega-cay-appliance-repair/" class="mobile-nav-sub-link">Tega Cay SC</a>
+    </div>
+  </div>
+  <div class="mobile-nav-parent">
+    <a href="/commercial-appliance-repair/" class="mobile-nav-link">
+      Commercial
+      <button class="mobile-nav-toggle">+</button>
+    </a>
+    <div class="mobile-nav-sub">
+      <a href="/commercial-appliance-repair/" class="mobile-nav-sub-link" style="color:var(--orange);font-weight:700;">Commercial - All Services</a>
+      <a href="/commercial-oven-repair/" class="mobile-nav-sub-link">Commercial Oven Repair</a>
+      <a href="/commercial-range-repair/" class="mobile-nav-sub-link">Commercial Range Repair</a>
+      <a href="/commercial-fryer-repair/" class="mobile-nav-sub-link">Commercial Fryer Repair</a>
+      <a href="/commercial-griddle-repair/" class="mobile-nav-sub-link">Commercial Griddle Repair</a>
+      <a href="/commercial-dishwasher-repair/" class="mobile-nav-sub-link">Commercial Dishwasher Repair</a>
+      <a href="/commercial-coffee-machine-repair/" class="mobile-nav-sub-link">Commercial Coffee Machine Repair</a>
+    </div>
+  </div>
+  <div class="mobile-nav-parent">
+    <a href="/hvac-repair/" class="mobile-nav-link">
+      HVAC
+      <button class="mobile-nav-toggle">+</button>
+    </a>
+    <div class="mobile-nav-sub">
+      <a href="/hvac-repair/" class="mobile-nav-sub-link" style="color:var(--orange);font-weight:700;">All HVAC Repair Services</a>
+      <a href="/air-conditioner-not-cooling/" class="mobile-nav-sub-link">AC Not Cooling</a>
+      <a href="/furnace-not-heating/" class="mobile-nav-sub-link">Furnace Not Heating</a>
+      <a href="/thermostat-not-working/" class="mobile-nav-sub-link">Thermostat Repair</a>
+      <a href="/hvac-tune-up-maintenance/" class="mobile-nav-sub-link">Tune-Up &amp; Maintenance</a>
     </div>
   </div>
   <a href="/faq/" class="mobile-nav-link">FAQ</a>
