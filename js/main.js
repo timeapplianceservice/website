@@ -211,7 +211,6 @@
   document.addEventListener('click', e => {
     const el = e.target.closest('[data-track]');
     if (el) track(el.dataset.track, el.textContent.trim().slice(0, 60));
-    if (e.target.closest('a[href^="tel:"]')) track('phone_click', 'call');
   });
 
   /* ──────────────────────────────────────────────────────────────
@@ -239,6 +238,14 @@
     d.page_title   = document.title;
     d.submitted_at = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
     Object.assign(d, getUTM());
+    const p = new URLSearchParams(window.location.search);
+    d.gclid          = p.get('gclid') || '';
+    d.referring_page = document.referrer || '';
+    d.device_type    = window.matchMedia('(max-width: 768px)').matches ? 'mobile' : 'desktop';
+    d.lead_source    = d.gclid ? 'google_ads'
+                     : d.utm_source ? d.utm_source
+                     : /google\./i.test(document.referrer) ? 'google_organic'
+                     : document.referrer ? 'referral' : 'direct';
     return d;
   }
 
@@ -248,22 +255,25 @@
       access_key: CFG.WEB3FORMS_KEY,
 
       // Эти поля управляют письмом:
-      subject:    `🔧 New Service Request — ${data.appliance_type || 'Appliance'} Repair`,
+      subject:    `New service request — ${data.appliance_type || 'Equipment'} — ${window.location.pathname}`,
       from_name:  'Time Appliance Repair Website',
 
       // Всё содержимое формы:
       name:             data.name        || '',
       phone:            data.phone       || '',
-      email:            data.email       || '',
       address:          data.address     || '',
       appliance_type:   data.appliance_type || '',
-      brand:            data.brand       || '',
       problem:          data.problem     || '',
       appointment_time: data.appointment_time || '',
 
       // Мета-данные
-      page_url:     data.page_url,
-      submitted_at: data.submitted_at,
+      landing_page_url: data.page_url,
+      page_title:       data.page_title    || '',
+      referring_page:   data.referring_page || '',
+      device_type:      data.device_type   || '',
+      lead_source:      data.lead_source   || '',
+      gclid:            data.gclid         || '',
+      submitted_at:     data.submitted_at,
       utm_source:   data.utm_source   || '',
       utm_medium:   data.utm_medium   || '',
       utm_campaign: data.utm_campaign || '',
@@ -317,8 +327,7 @@
       ].join(';');
       el.innerHTML =
         '<span style="font-size:1.6rem;flex-shrink:0">✅</span>' +
-        '<span>Thank you! Your request has been received.<br>' +
-        'We will contact you within <strong>60 minutes</strong>.</span>';
+        '<span>Thank you! Your request has been received.</span>';
       form.parentNode.insertBefore(el, form.nextSibling);
     }
     el.style.display = 'flex';
@@ -328,13 +337,7 @@
 
     el.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-    // GA4 / Ads conversion
-    track('form_submit_success', 'lead_form');
-    try {
-      if (window.gtag)
-        window.gtag('event', 'conversion', { send_to: 'AW-CONVERSION_ID/CONVERSION_LABEL' });
-      if (window.fbq) window.fbq('track', 'Lead');
-    } catch(e) {}
+    // Conversion is measured on /thank-you/ (js/tracking.js), not here.
   }
 
   /* ── Показ ошибки под кнопкой ── */
@@ -374,6 +377,7 @@
     const name  = form.querySelector('[name="name"]')?.value?.trim();
     const phone = form.querySelector('[name="phone"]')?.value?.trim();
     const appli = form.querySelector('[name="appliance_type"]')?.value;
+    const addr  = form.querySelector('[name="address"]')?.value?.trim();
 
     if (!name) {
       form.querySelector('[name="name"]')?.focus();
@@ -385,9 +389,14 @@
       showFormError(form, 'Please enter a valid phone number (10 digits).');
       return;
     }
+    if (!addr || addr.length < 5) {
+      form.querySelector('[name="address"]')?.focus();
+      showFormError(form, 'Please enter the service address.');
+      return;
+    }
     if (!appli) {
       form.querySelector('[name="appliance_type"]')?.focus();
-      showFormError(form, 'Please select the appliance type.');
+      showFormError(form, 'Please select the equipment or system type.');
       return;
     }
 
@@ -415,8 +424,22 @@
       await sendWeb3Forms(data);
       saveToSheets(data);       // fire-and-forget бэкап
 
+      // Lead context for /thank-you/ (no personal data) — conversion fires there, once
+      try {
+        sessionStorage.setItem('tar_lead_ctx', JSON.stringify({
+          equipment: data.appliance_type || '',
+          landing:   window.location.pathname,
+          title:     document.title,
+          source:    data.lead_source,
+          device:    data.device_type,
+          gclid:     data.gclid || '',
+          ts:        Date.now(),
+        }));
+      } catch (e2) {}
+
       showFormSuccess(form);
       form.reset();
+      setTimeout(() => { window.location.href = '/thank-you/'; }, 250);
 
     } catch(err) {
       console.error('Form error:', err.message);
@@ -428,6 +451,22 @@
       btn.disabled  = false;
     }
   }
+
+  /* Optional time chips: click the selected chip again to clear it */
+  document.addEventListener('click', e => {
+    const chip = e.target.closest('.time-chip');
+    if (!chip) return;
+    const input = chip.querySelector('input');
+    if (input && input.checked && input.dataset.wasChecked === '1') {
+      e.preventDefault();
+      input.checked = false;
+      input.dataset.wasChecked = '0';
+    }
+  });
+  document.addEventListener('change', e => {
+    if (!e.target.matches('.time-chip input')) return;
+    e.target.closest('.time-chips').querySelectorAll('input').forEach(i => { i.dataset.wasChecked = i.checked ? '1' : '0'; });
+  });
 
   /* Делегированный обработчик — работает для всех форм включая динамически вставленные */
   document.addEventListener('submit', e => {
