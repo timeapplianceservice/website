@@ -2097,3 +2097,10 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 .cat-card li a { color: var(--gray-700); font-size: .95rem; }
 .cat-card li a:hover { color: var(--orange); }
 .cat-card .btn { align-self: flex-start; margin-top: auto; }
+.hours-box { display: grid; grid-template-columns: minmax(260px, 340px) 1fr; gap: 32px; align-items: start; }
+.hours-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; }
+.hours-table caption { text-align: left; font-family: var(--font-display); font-weight: 800; font-size: 1.1rem; padding: 0 0 10px; color: var(--gray-900); }
+.hours-table th, .hours-table td { padding: 10px 16px; border-bottom: 1px solid var(--gray-200); text-align: left; font-size: .95rem; }
+.hours-table th { font-weight: 700; color: var(--gray-900); width: 40%; }
+.hours-table td { color: var(--gray-600); }
+@media (max-width: 768px) { .hours-box { grid-template-columns: 1fr; } }
